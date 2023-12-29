@@ -57,7 +57,8 @@ public class SampleJob {
 
 	@Bean
 	public Job secondJob() {
-		return jobBuilder.get("Second Job").incrementer(new RunIdIncrementer()).start(firstChunkStep()).next(secondStep()).build();
+		return jobBuilder.get("Second Job").incrementer(new RunIdIncrementer()).start(firstChunkStep())
+				.next(secondStep()).build();
 	}
 
 	private Step firstStep() {
